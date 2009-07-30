@@ -23,10 +23,12 @@
 (eval-after-load "color-theme"
   '(progn
      (color-theme-initialize)
-     (color-theme-hober)))
+     (color-theme-billw2)
+     ))
 
 
 ;; find unbound keys in emacs
 (add-to-list 'load-path (concat dotfiles-dir "/includes"))
 
 (require 'unbound)
+
