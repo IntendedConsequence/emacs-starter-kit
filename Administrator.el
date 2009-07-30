@@ -24,3 +24,9 @@
   '(progn
      (color-theme-initialize)
      (color-theme-hober)))
+
+
+;; find unbound keys in emacs
+(add-to-list 'load-path (concat dotfiles-dir "/includes"))
+
+(require 'unbound)
