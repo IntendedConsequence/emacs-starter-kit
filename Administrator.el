@@ -32,3 +32,22 @@
 
 (require 'unbound)
 
+;; yasnippet
+(add-to-list 'load-path (concat dotfiles-dir "/includes/yasnippet"))
+(require 'yasnippet) ;; not yasnippet-bundle
+(yas/initialize)
+(yas/load-directory (concat dotfiles-dir "/includes/yasnippet/snippets"))
+
+;; (add-hook 'ruby-mode-hook
+;;           (lambda ()
+;;              (make-variable-buffer-local 'yas/trigger-key)
+;;              (setq yas/trigger-key [tab])))
+
+;; (add-hook 'ruby-mode-hook
+;;           	  (lambda ()
+;;           	    (org-set-local 'yas/trigger-key [tab])
+;;           	    (define-key yas/keymap [tab] 'yas/next-field-group)))
+
+(add-hook 'ruby-mode-hook
+          #'(lambda ()
+              (local-set-key [tab] 'yas/expand)))
